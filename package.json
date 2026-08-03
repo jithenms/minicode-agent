@@ -1,0 +1,32 @@
+{
+  "name": "minicode-agent",
+  "version": "0.1.0",
+  "description": "A small reason-execute-verify coding agent CLI",
+  "type": "module",
+  "bin": {
+    "minicode-agent": "dist/src/cli/main.js"
+  },
+  "exports": {
+    ".": "./dist/src/index.js"
+  },
+  "files": [
+    "dist/src",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/test/**/*.test.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "diff": "^8.0.2",
+    "openai": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "typescript": "^5.9.0"
+  }
+}
